@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./output.css")
+    title MOVIES
+
+  body(class="bg-[rgb(34,36,82)]")
+      h1.text-3xl.mb-6 Movies
+      div(class="mt-8 grid md:grid-cols-3 gap-4")
+        each movie in data
+          a(href=`/movies/${movie.id}`) 
+            img(src=`https://image.tmdb.org/t/p/w500${movie.poster_path}`, alt="movie.poster_path")
+            h2.text-xl.font-bold(style="color: rgb(34,36,82)")= movie.title
+            p.text-white.mt-2 Release: #{movie.release_date}
+            p.text-white Rating: #{movie.vote_average}
+
+
+      //- div
+      //-   img(src="dup.jpg", alt="")
+      //-   h2.text-white DUPLICITY
+      //-   p.text-white 2025
+
+      //- div
+      //-   img(src="last.jpg", alt="")
+      //-   h2.text-white LAST BREATH
+      //-   p.text-white 2025
+
+      //- div
+      //-   img(src="novo.jpeg", alt="")
+      //-   h2.text-white NOVACAINE
+      //-   p.text-white 2025
+
+      //- div
+      //-   img(src="state.jpg", alt="")
+      //-   h2.text-white THE ELECTRIC STATE
+      //-   p.text-white 2025

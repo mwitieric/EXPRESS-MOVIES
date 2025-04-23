@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/output.css")
+    title SERIES
+
+  body(class="bg-[rgb(34,36,82)]")
+    h1.text-3xl.mb-6 Series
+    div(class="mt-10 grid md:grid-cols-3 gap-4")
+      each serie in data
+        a(href=`/series/${serie.id}`) 
+          div
+            img(src=`https://image.tmdb.org/t/p/w500${serie.poster_path}`, alt="series.poster_path")
+            h2.text-xl.font-bold(style="color: rgb(34,36,82)")= serie.name
+            p.text-white.mt-2 Release: #{serie.first_air_date}
+            p.text-white Rating: #{serie.vote_average}
